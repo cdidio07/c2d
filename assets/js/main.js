@@ -83,7 +83,8 @@
 
   /* ---------------- Reveal on scroll ---------------- */
   var revealTargets = document.querySelectorAll(
-    ".principle, .engagement-card, .impact-col, .media-card, .process__step, .journey__stage"
+    ".principle, .engagement-card, .impact-col, .media-card, .process__step, .journey__stage, " +
+    ".equation, .pem, .about__media, .about__copy, .contact-aside, .faq-item"
   );
   revealTargets.forEach(function (el) { el.classList.add("reveal"); });
 

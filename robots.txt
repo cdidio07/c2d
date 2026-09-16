@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://carlodidio.net/sitemap.xml
+Sitemap: https://c2dpartnerships.com/sitemap.xml
