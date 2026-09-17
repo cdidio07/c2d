@@ -184,9 +184,12 @@
     });
 
     var engCards = engScroll.querySelectorAll(".engagement-card");
-    if (engCards.length && !reduceMotion) {
+    var engSpacerStart = engScroll.querySelector(".engagement-spacer--start");
+    var engSpacerEnd = engScroll.querySelector(".engagement-spacer--end");
+    if (engCards.length) {
       var engTicking = false;
       function updateEngScale() {
+        if (reduceMotion) return;
         var containerRect = engScroll.getBoundingClientRect();
         var centerX = containerRect.left + containerRect.width / 2;
         engCards.forEach(function (card) {
@@ -208,14 +211,22 @@
           engTicking = true;
         }
       }
-      var engGrid = engScroll.querySelector(".engagement-grid");
-      if (engGrid) {
-        var startPad = parseFloat(window.getComputedStyle(engGrid).paddingLeft) || 0;
-        engScroll.scrollLeft = startPad;
+      function setEngSpacers() {
+        if (!engSpacerStart || !engSpacerEnd || !engCards.length) return 0;
+        var cardWidth = parseFloat(window.getComputedStyle(engCards[0]).width) || 0;
+        var pad = Math.max(0, (engScroll.clientWidth - cardWidth) / 2);
+        engSpacerStart.style.width = pad + "px";
+        engSpacerEnd.style.width = pad + "px";
+        return pad;
       }
+      setEngSpacers();
+      engScroll.scrollLeft = 0;
       updateEngScale();
       engScroll.addEventListener("scroll", onEngScroll, { passive: true });
-      window.addEventListener("resize", onEngScroll);
+      window.addEventListener("resize", function () {
+        setEngSpacers();
+        onEngScroll();
+      });
     }
   }
 
