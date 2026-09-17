@@ -110,7 +110,7 @@
   /* ---------------- Reveal on scroll ---------------- */
   var revealTargets = document.querySelectorAll(
     ".principle, .impact-col, .media-item, .process__step, " +
-    ".equation, .pem-feature, .about__media, .about__copy, .contact-aside, .faq-item, .numbers-stat"
+    ".equation, .pem-feature, .faq-item, .numbers-stat"
   );
   revealTargets.forEach(function (el) { el.classList.add("reveal"); });
 

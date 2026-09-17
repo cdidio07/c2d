@@ -714,45 +714,6 @@ html.splash-lock,html.splash-lock body{overflow:hidden;height:100%;}
 .process__step p{font-size:.95rem;color:var(--charcoal);}
 
 /* =========================================================
-   About
-   ========================================================= */
-.about__grid{display:grid;gap:2.5rem;grid-template-columns:1fr;align-items:start;}
-@media (min-width:960px){.about__grid{grid-template-columns:0.85fr 1.15fr;gap:4rem;}}
-.about__media{position:relative;}
-.about__media img{border-radius:2px;transition:transform .6s cubic-bezier(.22,.61,.36,1);}
-.about__media picture{
-  display:block;overflow:hidden;border-radius:2px;
-  clip-path:inset(0 0 0 0);transition:clip-path 1.2s cubic-bezier(.22,.61,.36,1);
-  box-shadow:0 30px 60px -24px rgba(0,0,0,.55);
-}
-.about__media picture:hover img{transform:scale(1.05) rotate(.3deg);}
-.about__media:not(.is-visible) picture{clip-path:inset(0 100% 0 0);}
-@media (prefers-reduced-motion: reduce){
-  .about__media picture{clip-path:none !important;transition:none;}
-}
-.about__descriptor{
-  font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;
-}
-.pull-quote{
-  font-family:var(--font-serif);font-style:italic;font-size:1.5rem;line-height:1.4;color:var(--gold);
-  border-left:2px solid var(--gold);padding-left:1.5rem;margin:2rem 0;
-}
-.bio-expand{margin-top:1.5rem;border-top:1px solid rgba(255,255,255,.15);padding-top:1.25rem;}
-.bio-expand summary{
-  cursor:pointer;font-weight:600;color:var(--gold);list-style:none;display:flex;align-items:center;gap:.5rem;
-}
-.bio-expand summary::-webkit-details-marker{display:none;}
-.bio-expand summary::after{
-  content:"+";font-size:1.2rem;margin-left:.25rem;display:inline-block;
-  transition:transform .35s cubic-bezier(.22,.61,.36,1);
-}
-.bio-expand[open] summary::after{transform:rotate(45deg);}
-.bio-expand__body{padding-top:1.25rem;color:#D7DEE7;}
-.bio-expand__body h3{font-family:var(--font-serif);color:var(--white);font-size:1.1rem;margin:1.25rem 0 .5rem;}
-.bio-expand__body h3:first-child{margin-top:0;}
-.bio-expand__body p{font-size:.97rem;line-height:1.7;margin-bottom:.5rem;}
-
-/* =========================================================
    Impact
    ========================================================= */
 .impact-header{display:grid;gap:2rem;grid-template-columns:1fr;align-items:end;margin-bottom:1rem;}
