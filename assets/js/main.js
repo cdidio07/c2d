@@ -25,7 +25,7 @@
     } else {
       splash.classList.add("is-active");
       html.classList.add("splash-lock");
-      window.setTimeout(dismissSplash, 3800);
+      window.setTimeout(dismissSplash, 5600);
       if (skipBtn) {
         skipBtn.addEventListener("click", dismissSplash);
         skipBtn.focus({ preventScroll: true });
@@ -119,10 +119,12 @@
 
   /* ---------------- Reveal on scroll ---------------- */
   var revealTargets = document.querySelectorAll(
-    ".principle, .engagement-card, .impact-col, .media-item, .process__step, .journey__stage, " +
+    ".principle, .engagement-card, .impact-col, .media-item, .process__step, " +
     ".equation, .pem-feature, .pem-card, .about__media, .about__copy, .contact-aside, .faq-item, .numbers-stat"
   );
   revealTargets.forEach(function (el) { el.classList.add("reveal"); });
+
+  var slideTargets = document.querySelectorAll(".slide-in");
 
   if ("IntersectionObserver" in window && !reduceMotion) {
     var revealObserver = new IntersectionObserver(
@@ -137,14 +139,44 @@
       { threshold: 0.01, rootMargin: "0px 0px 200px 0px" }
     );
     revealTargets.forEach(function (el) { revealObserver.observe(el); });
+    slideTargets.forEach(function (el) { revealObserver.observe(el); });
 
     // Safety net: never leave content permanently invisible (fast scrolls,
     // scroll-to-fragment, or any element the observer misses).
     window.setTimeout(function () {
       revealTargets.forEach(function (el) { el.classList.add("is-visible"); });
+      slideTargets.forEach(function (el) { el.classList.add("is-visible"); });
     }, 2500);
   } else {
     revealTargets.forEach(function (el) { el.classList.add("is-visible"); });
+    slideTargets.forEach(function (el) { el.classList.add("is-visible"); });
+  }
+
+  /* ---------------- Relationship Lifecycle — staggered reveal ---------------- */
+  var journeyList = document.querySelector(".journey");
+  if (journeyList) {
+    if (reduceMotion) {
+      journeyList.classList.add("is-visible");
+    } else {
+      journeyList.classList.add("js-stagger");
+      if ("IntersectionObserver" in window) {
+        var journeyObserver = new IntersectionObserver(
+          function (entries, obs) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                journeyList.classList.add("is-visible");
+                obs.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+        journeyObserver.observe(journeyList);
+        window.setTimeout(function () { journeyList.classList.add("is-visible"); }, 2500);
+      } else {
+        journeyList.classList.add("is-visible");
+      }
+    }
   }
 
   /* ---------------- By the Numbers — count-up ---------------- */

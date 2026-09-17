@@ -98,28 +98,30 @@
     <span class="splash__aurora-blob splash__aurora-blob--2"></span>
     <span class="splash__aurora-blob splash__aurora-blob--3"></span>
     <span class="splash__aurora-blob splash__aurora-blob--4"></span>
+    <span class="splash__aurora-blob splash__aurora-blob--5"></span>
   </div>
   <button class="splash__skip" id="splash-skip" type="button">Skip intro</button>
   <div class="splash__stage">
     <svg class="splash__mark" viewBox="0 0 420 200" aria-hidden="true">
-      <rect class="splash__capsule splash__capsule--left" x="10" y="30" width="260" height="140" rx="70" fill="none" stroke="#C2A15A" stroke-width="10"></rect>
-      <rect class="splash__capsule splash__capsule--right" x="150" y="30" width="260" height="140" rx="70" fill="none" stroke="#C2A15A" stroke-width="10"></rect>
-      <text class="splash__two" x="210" y="122" text-anchor="middle">2</text>
+      <path class="splash__capsule splash__capsule--left" d="M170,40 H100 A60,60 0 0,0 40,100 A60,60 0 0,0 100,160 H170" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"></path>
+      <path class="splash__capsule splash__capsule--right" d="M250,40 H320 A60,60 0 0,1 380,100 A60,60 0 0,1 320,160 H250" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"></path>
+      <path class="splash__connector" d="M186,58 Q186,26 212,26 Q238,26 238,52 Q238,78 206,102 L182,134 L236,134" fill="none" stroke="#C2A15A" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"></path>
     </svg>
     <div class="splash__mark-reflection" aria-hidden="true">
       <svg viewBox="0 0 420 200">
-        <rect x="10" y="30" width="260" height="140" rx="70" fill="none" stroke="#C2A15A" stroke-width="10"></rect>
-        <rect x="150" y="30" width="260" height="140" rx="70" fill="none" stroke="#C2A15A" stroke-width="10"></rect>
+        <path d="M170,40 H100 A60,60 0 0,0 40,100 A60,60 0 0,0 100,160 H170" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"></path>
+        <path d="M250,40 H320 A60,60 0 0,1 380,100 A60,60 0 0,1 320,160 H250" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"></path>
+        <path d="M186,58 Q186,26 212,26 Q238,26 238,52 Q238,78 206,102 L182,134 L236,134" fill="none" stroke="#C2A15A" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
     </div>
     <div class="splash__type">
       <span class="splash__wordmark">Partnerships</span>
       <span class="splash__divider" aria-hidden="true">
         <span class="splash__divider-line"></span>
-        <span class="splash__divider-star">&#10022;</span>
+        <span class="splash__divider-diamond"></span>
         <span class="splash__divider-line"></span>
       </span>
-      <span class="splash__tagline">From Connections to Direction</span>
+      <span class="splash__tagline"><span class="splash__tagline-white">From Connections</span> <span class="splash__tagline-gold">to Direction</span></span>
     </div>
   </div>
 </div>
@@ -140,6 +142,15 @@
       <li><a href="#media">Media</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
+    <div class="nav__social" aria-label="Social media">
+      <a href="https://www.linkedin.com/in/carlodidio" target="_blank" rel="noopener noreferrer" aria-label="Carlo Di Dio on LinkedIn" class="nav__social-link">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.15 2.07 2.07 0 0 1 0 4.15zM7.12 20.45H3.56V9h3.56v11.45z"></path></svg>
+      </a>
+      <a href="https://www.instagram.com/carlo.di.dio/" target="_blank" rel="noopener noreferrer" aria-label="Carlo Di Dio on Instagram" class="nav__social-link">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.24 2.22.41.56.21.96.47 1.38.89.42.42.68.82.89 1.38.17.42.36 1.05.41 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.8-.41 2.22-.21.56-.47.96-.89 1.38-.42.42-.82.68-1.38.89-.42.17-1.05.36-2.22.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.24-2.22-.41a3.71 3.71 0 0 1-1.38-.89 3.71 3.71 0 0 1-.89-1.38c-.17-.42-.36-1.05-.41-2.22-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.24-1.8.41-2.22.21-.56.47-.96.89-1.38.42-.42.82-.68 1.38-.89.42-.17 1.05-.36 2.22-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.47.72-2.11 1.36-.64.64-1.05 1.32-1.36 2.11-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.47 1.36 2.11.64.64 1.32 1.05 2.11 1.36.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.47-.72 2.11-1.36.64-.64 1.05-1.32 1.36-2.11.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.36-2.11A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"></path></svg>
+      </a>
+    </div>
 
     <a href="#book-a-call" class="btn btn--gold btn--sm nav__cta">Book a Call</a>
 
@@ -168,15 +179,15 @@
 <section class="hero" id="home" aria-label="Introduction">
   <div class="hero__bg" aria-hidden="true">
     <svg class="hero__mark" viewBox="0 0 760 380" preserveAspectRatio="xMidYMid meet">
-      <rect x="30" y="30" width="560" height="320" rx="160" fill="none" stroke="#C2A15A" stroke-width="14"></rect>
-      <rect x="478" y="30" width="560" height="320" rx="160" fill="none" stroke="#C2A15A" stroke-width="14"></rect>
+      <path d="M300,80 H190 A110,110 0 0,0 80,190 A110,110 0 0,0 190,300 H300" fill="none" stroke="#C2A15A" stroke-width="20" stroke-linecap="round"></path>
+      <path d="M460,80 H570 A110,110 0 0,1 680,190 A110,110 0 0,1 570,300 H460" fill="none" stroke="#C2A15A" stroke-width="20" stroke-linecap="round"></path>
     </svg>
   </div>
   <div class="hero__grid container">
     <div class="hero__content">
       <p class="eyebrow eyebrow--light hero__brandline">
         <img src="/assets/img/c2d-badge-navy.png" alt="" class="hero__brandmark" width="28" height="28">
-        C2D Partnerships &middot; From Connections to Direction
+        <span class="brand">C2D Partnerships</span> &middot; From Connections to Direction
       </p>
       <h1 class="hero__headline">Transforming the Performing Arts into <span class="accent">Stronger Enterprises</span></h1>
       <p class="hero__sub">C2D Partnerships helps performing arts organizations turn artistic ambition into sustainable revenue, enduring relationships, and measurable institutional growth.</p>
@@ -188,8 +199,8 @@
     </div>
     <div class="hero__panel" aria-hidden="true">
       <svg class="hero__panel-mark" viewBox="0 0 420 200">
-        <rect x="10" y="30" width="260" height="140" rx="70" fill="none" stroke="#C2A15A" stroke-width="8"></rect>
-        <rect x="150" y="30" width="260" height="140" rx="70" fill="none" stroke="#C2A15A" stroke-width="8"></rect>
+        <path d="M170,40 H100 A60,60 0 0,0 40,100 A60,60 0 0,0 100,160 H170" fill="none" stroke="#C2A15A" stroke-width="10" stroke-linecap="round"></path>
+        <path d="M250,40 H320 A60,60 0 0,1 380,100 A60,60 0 0,1 320,160 H250" fill="none" stroke="#C2A15A" stroke-width="10" stroke-linecap="round"></path>
       </svg>
       <div class="hero__chip hero__chip--1">
         <span class="hero__chip-value">$195M+</span>
@@ -256,8 +267,8 @@
 <!-- ============ OPPORTUNITY ============ -->
 <section class="section section--ivory" id="opportunity" aria-labelledby="opportunity-heading">
   <div class="container">
-    <p class="eyebrow">The Opportunity</p>
-    <h2 id="opportunity-heading" class="section__headline">The Mission Is Powerful. The Model Must Be Stronger.</h2>
+    <p class="eyebrow slide-in slide-in--left">The Opportunity</p>
+    <h2 id="opportunity-heading" class="section__headline slide-in slide-in--left">The Mission Is Powerful. The Model Must Be Stronger.</h2>
     <div class="lede-grid">
       <p class="lede">Performing arts organizations create extraordinary artistic, educational, cultural, and community value. Yet many remain dependent on annual fundraising, episodic campaigns, fragile attendance patterns, and operating models that were not designed for the environment they now face.</p>
       <p class="lede">The answer is not to abandon philanthropy or commercialize the artistic mission. It is to build a stronger enterprise around that mission. C2D Partnerships helps organizations determine what should be preserved, what must be fixed, what can be scaled, and where investment can create lasting institutional value.</p>
@@ -293,8 +304,8 @@
 <!-- ============ THE MODEL ============ -->
 <section class="section section--navy" id="model" aria-labelledby="model-heading">
   <div class="container">
-    <p class="eyebrow eyebrow--light">The Model</p>
-    <h2 id="model-heading" class="section__headline section__headline--light">A New Operating Model for the Performing Arts</h2>
+    <p class="eyebrow eyebrow--light slide-in slide-in--right">The Model</p>
+    <h2 id="model-heading" class="section__headline section__headline--light slide-in slide-in--right">A New Operating Model for the Performing Arts</h2>
     <p class="lede lede--light">Sustainable transformation requires five interconnected systems, working together as a single operating model &mdash; not five separate initiatives. We call it <strong>the Performing Arts Enterprise Model.</strong></p>
 
     <div class="pem" id="pem">
@@ -635,6 +646,10 @@
         <source srcset="/assets/img/carlo-hero.webp" type="image/webp">
         <img src="/assets/img/carlo-hero.jpg" alt="Carlo Di Dio seated in a theater, dressed in a navy suit" width="2200" height="1466" loading="lazy">
       </picture>
+      <picture class="about__media-tertiary">
+        <source srcset="/assets/img/carlo-about-third.webp" type="image/webp">
+        <img src="/assets/img/carlo-about-third.jpg" alt="Carlo Di Dio smiling in a theater auditorium, wearing a green plaid jacket and red tie" width="1800" height="1200" loading="lazy">
+      </picture>
     </div>
     <div class="about__copy">
       <p class="eyebrow eyebrow--light">About the Founder</p>
@@ -672,10 +687,10 @@
   <div class="container">
     <div class="impact-header">
       <div>
-        <p class="eyebrow">Impact</p>
-        <h2 id="impact-heading" class="section__headline">Experience Across Art, Business and Service</h2>
+        <p class="eyebrow slide-in slide-in--left">Impact</p>
+        <h2 id="impact-heading" class="section__headline slide-in slide-in--left">Experience Across Art, Business and Service</h2>
       </div>
-      <figure class="impact-media">
+      <figure class="impact-media slide-in slide-in--right">
         <picture>
           <source srcset="/assets/img/carlo-education.webp" type="image/webp">
           <img src="/assets/img/carlo-education.jpg" alt="Carlo Di Dio coaching a young dancer at the barre" width="1800" height="2823" loading="lazy">
@@ -773,7 +788,7 @@
       <a class="media-item" href="https://www.rainews.it/tgr/campania/video/2025/04/da-procida-a-new-york-nel-gotha-della-danza-6f13801b-3e82-4fbc-a685-7a0ad57aca26.html" target="_blank" rel="noopener noreferrer">
         <span class="media-item__logo"><img src="/assets/img/logos/press/rai.svg" alt="RAI logo" loading="lazy"></span>
         <span class="media-item__body">
-          <span class="media-item__pub">RAI &middot; April 2025</span>
+          <span class="media-item__pub">RAI</span>
           <h3>From Procida to New York, Among the Elite of Dance</h3>
           <p>An Italian television feature on Carlo&rsquo;s journey from southern Italy to leadership in New York&rsquo;s arts institutions.</p>
         </span>
@@ -791,7 +806,7 @@
       <div class="media-item media-item--static">
         <span class="media-item__logo"><img src="/assets/img/logos/press/il-mattino.png" alt="Il Mattino logo" loading="lazy"></span>
         <span class="media-item__body">
-          <span class="media-item__pub">Il Mattino &middot; March 2025</span>
+          <span class="media-item__pub">Il Mattino</span>
           <h3>Carlo Di Dio Joins the Board of the Baryshnikov Arts Center</h3>
           <p>Coverage in Naples&rsquo;s leading daily newspaper of Carlo&rsquo;s appointment to the board of Mikhail Baryshnikov&rsquo;s New York arts center.</p>
         </span>
@@ -859,8 +874,8 @@
 <section class="cta-final" aria-labelledby="cta-final-heading">
   <div class="cta-final__media" aria-hidden="true">
     <svg class="cta-final__mark" viewBox="0 0 760 380" preserveAspectRatio="xMidYMid meet">
-      <rect x="30" y="30" width="560" height="320" rx="160" fill="none" stroke="#C2A15A" stroke-width="14"></rect>
-      <rect x="478" y="30" width="560" height="320" rx="160" fill="none" stroke="#C2A15A" stroke-width="14"></rect>
+      <path d="M300,80 H190 A110,110 0 0,0 80,190 A110,110 0 0,0 190,300 H300" fill="none" stroke="#C2A15A" stroke-width="20" stroke-linecap="round"></path>
+      <path d="M460,80 H570 A110,110 0 0,1 680,190 A110,110 0 0,1 570,300 H460" fill="none" stroke="#C2A15A" stroke-width="20" stroke-linecap="round"></path>
     </svg>
   </div>
   <div class="container cta-final__content">
@@ -960,7 +975,7 @@
 
       <div class="contact-aside">
         <h3>Direct Contact</h3>
-        <p class="contact-aside__founder">A direct conversation with Carlo Di Dio, Founder of C2D Partnerships.</p>
+        <p class="contact-aside__founder">A direct conversation with Carlo Di Dio, Founder of <span class="brand brand--ink">C2D Partnerships</span>.</p>
         <p><a href="mailto:cdidio@carlodidio.net">cdidio@carlodidio.net</a></p>
         <p><a href="https://www.linkedin.com/in/carlodidio" target="_blank" rel="noopener noreferrer">linkedin.com/in/carlodidio</a></p>
         <h3>Schedule a Conversation</h3>
@@ -979,17 +994,25 @@
       <img src="/assets/img/c2d-badge-navy.png" alt="" class="site-footer__mark" width="44" height="44" loading="lazy">
       <p class="site-footer__wordmark">C2D Partnerships</p>
       <p class="site-footer__tagline">From Connections to Direction.<br>Mission-led. Enterprise-minded. Built for lasting impact.</p>
+      <div class="site-footer__social" aria-label="Social media">
+        <a href="https://www.linkedin.com/in/carlodidio" target="_blank" rel="noopener noreferrer" aria-label="Carlo Di Dio on LinkedIn" class="site-footer__social-link">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.15 2.07 2.07 0 0 1 0 4.15zM7.12 20.45H3.56V9h3.56v11.45z"></path></svg>
+        </a>
+        <a href="https://www.instagram.com/carlo.di.dio/" target="_blank" rel="noopener noreferrer" aria-label="Carlo Di Dio on Instagram" class="site-footer__social-link">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.24 2.22.41.56.21.96.47 1.38.89.42.42.68.82.89 1.38.17.42.36 1.05.41 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.8-.41 2.22-.21.56-.47.96-.89 1.38-.42.42-.82.68-1.38.89-.42.17-1.05.36-2.22.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.24-2.22-.41a3.71 3.71 0 0 1-1.38-.89 3.71 3.71 0 0 1-.89-1.38c-.17-.42-.36-1.05-.41-2.22-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.24-1.8.41-2.22.21-.56.47-.96.89-1.38.42-.42.82-.68 1.38-.89.42-.17 1.05-.36 2.22-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.31-1.47.72-2.11 1.36-.64.64-1.05 1.32-1.36 2.11-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.31.79.72 1.47 1.36 2.11.64.64 1.32 1.05 2.11 1.36.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56.79-.31 1.47-.72 2.11-1.36.64-.64 1.05-1.32 1.36-2.11.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.36-2.11A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"></path></svg>
+        </a>
+      </div>
     </div>
     <div class="site-footer__links">
-      <p><a href="mailto:cdidio@carlodidio.net">cdidio@carlodidio.net</a></p>
       <p><a href="https://www.linkedin.com/in/carlodidio" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+      <p><a href="https://www.instagram.com/carlo.di.dio/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
       <p><a href="/privacy.html">Privacy</a></p>
       <p><a href="/accessibility.html">Accessibility</a></p>
     </div>
   </div>
   <div class="container site-footer__legal">
-    <p>Independent advisory perspectives and services presented on this website are those of C2D Partnerships and its founder, Carlo Di Dio, and are not sponsored, endorsed, or delivered by his current employer.</p>
-    <p>&copy; <span id="year"></span> C2D Partnerships. All rights reserved.</p>
+    <p>Independent advisory perspectives and services presented on this website are those of <span class="brand">C2D Partnerships</span> and its founder, Carlo Di Dio, and are not sponsored, endorsed, or delivered by his current employer.</p>
+    <p>&copy; <span id="year"></span> <span class="brand">C2D Partnerships</span>. All rights reserved.</p>
   </div>
 </footer>
 
