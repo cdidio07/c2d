@@ -171,6 +171,45 @@
     }
   }
 
+  /* ---------------- Engagement carousel ---------------- */
+  var engScroll = document.getElementById("engagement-scroll");
+  if (engScroll) {
+    document.querySelectorAll(".engagement-controls__btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var dir = parseInt(btn.getAttribute("data-dir"), 10);
+        var card = engScroll.querySelector(".engagement-card");
+        var amount = card ? card.getBoundingClientRect().width + 24 : 320;
+        engScroll.scrollBy({ left: amount * dir, behavior: reduceMotion ? "auto" : "smooth" });
+      });
+    });
+  }
+
+  /* ---------------- Model — sticky scrollytelling ---------------- */
+  var pemPanels = document.querySelectorAll(".pem-panel");
+  var pemNavItems = document.querySelectorAll(".pem-nav__item");
+  if (pemPanels.length) {
+    if ("IntersectionObserver" in window && !reduceMotion) {
+      var pemObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var idx = entry.target.getAttribute("data-pem-panel");
+              pemPanels.forEach(function (p) { p.classList.remove("is-active"); });
+              entry.target.classList.add("is-active");
+              pemNavItems.forEach(function (item) {
+                item.classList.toggle("is-active", item.getAttribute("data-pem-nav") === idx);
+              });
+            }
+          });
+        },
+        { threshold: 0.01, rootMargin: "-40% 0px -40% 0px" }
+      );
+      pemPanels.forEach(function (p) { pemObserver.observe(p); });
+    } else {
+      pemPanels.forEach(function (p) { p.classList.add("is-active"); });
+    }
+  }
+
   /* ---------------- By the Numbers — count-up ---------------- */
   var statEls = document.querySelectorAll(".numbers-stat__value, .hero__chip-value");
   function runCount(el) {
