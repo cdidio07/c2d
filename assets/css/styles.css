@@ -241,10 +241,9 @@ html.splash-lock,html.splash-lock body{overflow:hidden;height:100%;}
   padding:0.85rem 1.5rem;
 }
 @media (min-width:900px){.nav{padding:0.85rem 3rem;}}
-.nav__brand{display:flex;align-items:center;gap:.6rem;margin-right:auto;color:var(--white);}
-.nav__mark{width:34px;height:auto;}
-.nav__wordmark{font-family:var(--font-serif);font-weight:600;font-size:1.05rem;letter-spacing:.01em;}
-.nav__wordmark-sub{font-family:var(--font-sans);font-weight:500;font-size:.72em;letter-spacing:.06em;color:#B9C2CE;margin-left:.15em;}
+.nav__brand{display:flex;align-items:center;margin-right:auto;color:var(--white);}
+.nav__mark{width:40px;height:auto;transition:transform var(--transition);}
+.nav__brand:hover .nav__mark{transform:scale(1.06);}
 .nav__links{display:none;gap:1.9rem;align-items:center;}
 .nav__links a{color:#D7DEE7;font-size:.92rem;font-weight:500;padding:.4rem 0;position:relative;}
 .nav__links a::after{
