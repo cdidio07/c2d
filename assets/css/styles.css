@@ -762,6 +762,7 @@ html.splash-lock,html.splash-lock body{overflow:hidden;height:100%;}
 .impact-media--wide{max-width:360px;}
 .impact-media img{border-radius:2px;}
 .impact-media figcaption{font-size:.82rem;color:#5b5f63;margin-top:.6rem;font-style:italic;}
+.section--navy .impact-media figcaption{color:#B9C2CE;}
 
 .impact-grid{display:grid;gap:1.5rem;grid-template-columns:1fr;margin-top:1rem;}
 @media (min-width:700px){.impact-grid{grid-template-columns:repeat(2,1fr);}}
