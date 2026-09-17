@@ -140,13 +140,6 @@
     );
     revealTargets.forEach(function (el) { revealObserver.observe(el); });
     slideTargets.forEach(function (el) { revealObserver.observe(el); });
-
-    // Safety net: never leave content permanently invisible (fast scrolls,
-    // scroll-to-fragment, or any element the observer misses).
-    window.setTimeout(function () {
-      revealTargets.forEach(function (el) { el.classList.add("is-visible"); });
-      slideTargets.forEach(function (el) { el.classList.add("is-visible"); });
-    }, 2500);
   } else {
     revealTargets.forEach(function (el) { el.classList.add("is-visible"); });
     slideTargets.forEach(function (el) { el.classList.add("is-visible"); });
@@ -172,7 +165,6 @@
           { threshold: 0.2 }
         );
         journeyObserver.observe(journeyList);
-        window.setTimeout(function () { journeyList.classList.add("is-visible"); }, 2500);
       } else {
         journeyList.classList.add("is-visible");
       }
