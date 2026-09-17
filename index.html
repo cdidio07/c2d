@@ -102,16 +102,23 @@
   </div>
   <button class="splash__skip" id="splash-skip" type="button">Skip intro</button>
   <div class="splash__stage">
-    <svg class="splash__mark" viewBox="0 0 420 200" aria-hidden="true">
-      <path class="splash__capsule splash__capsule--left" d="M170,40 H100 A60,60 0 0,0 40,100 A60,60 0 0,0 100,160 H170" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"></path>
-      <path class="splash__capsule splash__capsule--right" d="M250,40 H320 A60,60 0 0,1 380,100 A60,60 0 0,1 320,160 H250" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"></path>
-      <path class="splash__connector" d="M186,58 Q186,26 212,26 Q238,26 238,52 Q238,78 206,102 L182,134 L236,134" fill="none" stroke="#C2A15A" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"></path>
+    <svg class="splash__mark" viewBox="0 0 900 260" aria-hidden="true">
+      <defs>
+        <linearGradient id="splashGold" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#F0D89B"></stop>
+          <stop offset="45%" stop-color="#C9A25C"></stop>
+          <stop offset="100%" stop-color="#9C7530"></stop>
+        </linearGradient>
+      </defs>
+      <path class="splash__capsule splash__capsule--left" d="M405,50 H110 A80,80 0 0,0 30,130 A80,80 0 0,0 110,210 H405" fill="none" stroke="#FFFFFF" stroke-width="26" stroke-linecap="butt"></path>
+      <path class="splash__capsule splash__capsule--right" d="M495,50 H790 A80,80 0 0,1 870,130 A80,80 0 0,1 790,210 H495" fill="none" stroke="#FFFFFF" stroke-width="26" stroke-linecap="butt"></path>
+      <path class="splash__connector" d="M412,86 C412,64 432,50 462,50 C494,50 512,66 512,90 C512,112 496,126 470,146 L418,204 L500,204" fill="none" stroke="url(#splashGold)" stroke-width="26" stroke-linecap="butt" stroke-linejoin="round"></path>
     </svg>
     <div class="splash__mark-reflection" aria-hidden="true">
-      <svg viewBox="0 0 420 200">
-        <path d="M170,40 H100 A60,60 0 0,0 40,100 A60,60 0 0,0 100,160 H170" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"></path>
-        <path d="M250,40 H320 A60,60 0 0,1 380,100 A60,60 0 0,1 320,160 H250" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"></path>
-        <path d="M186,58 Q186,26 212,26 Q238,26 238,52 Q238,78 206,102 L182,134 L236,134" fill="none" stroke="#C2A15A" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"></path>
+      <svg viewBox="0 0 900 260">
+        <path d="M405,50 H110 A80,80 0 0,0 30,130 A80,80 0 0,0 110,210 H405" fill="none" stroke="#FFFFFF" stroke-width="26" stroke-linecap="butt"></path>
+        <path d="M495,50 H790 A80,80 0 0,1 870,130 A80,80 0 0,1 790,210 H495" fill="none" stroke="#FFFFFF" stroke-width="26" stroke-linecap="butt"></path>
+        <path d="M412,86 C412,64 432,50 462,50 C494,50 512,66 512,90 C512,112 496,126 470,146 L418,204 L500,204" fill="none" stroke="#C2A15A" stroke-width="26" stroke-linecap="butt" stroke-linejoin="round"></path>
       </svg>
     </div>
     <div class="splash__type">
@@ -178,9 +185,10 @@
 <!-- ============ HERO ============ -->
 <section class="hero" id="home" aria-label="Introduction">
   <div class="hero__bg" aria-hidden="true">
-    <svg class="hero__mark" viewBox="0 0 760 380" preserveAspectRatio="xMidYMid meet">
-      <path d="M300,80 H190 A110,110 0 0,0 80,190 A110,110 0 0,0 190,300 H300" fill="none" stroke="#C2A15A" stroke-width="20" stroke-linecap="round"></path>
-      <path d="M460,80 H570 A110,110 0 0,1 680,190 A110,110 0 0,1 570,300 H460" fill="none" stroke="#C2A15A" stroke-width="20" stroke-linecap="round"></path>
+    <svg class="hero__mark" viewBox="0 0 900 260" preserveAspectRatio="xMidYMid meet">
+      <path d="M405,50 H110 A80,80 0 0,0 30,130 A80,80 0 0,0 110,210 H405" fill="none" stroke="#FFFFFF" stroke-width="26" stroke-linecap="butt"></path>
+      <path d="M495,50 H790 A80,80 0 0,1 870,130 A80,80 0 0,1 790,210 H495" fill="none" stroke="#FFFFFF" stroke-width="26" stroke-linecap="butt"></path>
+      <path d="M412,86 C412,64 432,50 462,50 C494,50 512,66 512,90 C512,112 496,126 470,146 L418,204 L500,204" fill="none" stroke="#C2A15A" stroke-width="26" stroke-linecap="butt" stroke-linejoin="round"></path>
     </svg>
   </div>
   <div class="hero__grid container">
@@ -198,9 +206,10 @@
       </div>
     </div>
     <div class="hero__panel" aria-hidden="true">
-      <svg class="hero__panel-mark" viewBox="0 0 420 200">
-        <path d="M170,40 H100 A60,60 0 0,0 40,100 A60,60 0 0,0 100,160 H170" fill="none" stroke="#C2A15A" stroke-width="10" stroke-linecap="round"></path>
-        <path d="M250,40 H320 A60,60 0 0,1 380,100 A60,60 0 0,1 320,160 H250" fill="none" stroke="#C2A15A" stroke-width="10" stroke-linecap="round"></path>
+      <svg class="hero__panel-mark" viewBox="0 0 900 260">
+        <path d="M405,50 H110 A80,80 0 0,0 30,130 A80,80 0 0,0 110,210 H405" fill="none" stroke="#FFFFFF" stroke-width="26" stroke-linecap="butt"></path>
+        <path d="M495,50 H790 A80,80 0 0,1 870,130 A80,80 0 0,1 790,210 H495" fill="none" stroke="#FFFFFF" stroke-width="26" stroke-linecap="butt"></path>
+        <path d="M412,86 C412,64 432,50 462,50 C494,50 512,66 512,90 C512,112 496,126 470,146 L418,204 L500,204" fill="none" stroke="#C2A15A" stroke-width="26" stroke-linecap="butt" stroke-linejoin="round"></path>
       </svg>
       <div class="hero__chip hero__chip--1">
         <span class="hero__chip-value">$195M+</span>
@@ -865,9 +874,10 @@
 <!-- ============ FINAL CTA ============ -->
 <section class="cta-final" aria-labelledby="cta-final-heading">
   <div class="cta-final__media" aria-hidden="true">
-    <svg class="cta-final__mark" viewBox="0 0 760 380" preserveAspectRatio="xMidYMid meet">
-      <path d="M300,80 H190 A110,110 0 0,0 80,190 A110,110 0 0,0 190,300 H300" fill="none" stroke="#C2A15A" stroke-width="20" stroke-linecap="round"></path>
-      <path d="M460,80 H570 A110,110 0 0,1 680,190 A110,110 0 0,1 570,300 H460" fill="none" stroke="#C2A15A" stroke-width="20" stroke-linecap="round"></path>
+    <svg class="cta-final__mark" viewBox="0 0 900 260" preserveAspectRatio="xMidYMid meet">
+      <path d="M405,50 H110 A80,80 0 0,0 30,130 A80,80 0 0,0 110,210 H405" fill="none" stroke="#FFFFFF" stroke-width="26" stroke-linecap="butt"></path>
+      <path d="M495,50 H790 A80,80 0 0,1 870,130 A80,80 0 0,1 790,210 H495" fill="none" stroke="#FFFFFF" stroke-width="26" stroke-linecap="butt"></path>
+      <path d="M412,86 C412,64 432,50 462,50 C494,50 512,66 512,90 C512,112 496,126 470,146 L418,204 L500,204" fill="none" stroke="#C2A15A" stroke-width="26" stroke-linecap="butt" stroke-linejoin="round"></path>
     </svg>
   </div>
   <div class="container cta-final__content">
