@@ -82,16 +82,6 @@
         }
         target.focus({ preventScroll: true });
       }, reduceMotion ? 0 : 500);
-
-      var practice = link.getAttribute("data-practice");
-      if (practice) {
-        var select = document.getElementById("f-interest");
-        if (select) {
-          Array.prototype.forEach.call(select.options, function (opt) {
-            if (opt.value === practice) select.value = practice;
-          });
-        }
-      }
     });
   });
 
@@ -356,60 +346,4 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---------------- Contact form (mailto handoff + spam guards) ---------------- */
-  var form = document.getElementById("contact-form");
-  if (form) {
-    var loadedAt = Date.now();
-    var status = document.getElementById("form-status");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      // Honeypot check
-      var honey = form.querySelector('[name="company"]');
-      if (honey && honey.value.trim() !== "") {
-        return; // silently drop — likely automated
-      }
-
-      // Time-trap: submissions faster than 2.5s after load are treated as bots
-      if (Date.now() - loadedAt < 2500) {
-        status.textContent = "Please take a moment before sending — try again in a few seconds.";
-        status.classList.add("is-error");
-        return;
-      }
-
-      var name = form.name.value.trim();
-      var email = form.email.value.trim();
-      var message = form.message.value.trim();
-
-      if (!name || !email || !message) {
-        status.textContent = "Please complete all required fields.";
-        status.classList.add("is-error");
-        return;
-      }
-
-      var lines = [
-        "Name: " + name,
-        "Title: " + (form.title.value.trim() || "—"),
-        "Organization: " + (form.organization.value.trim() || "—"),
-        "Email: " + email,
-        "Organization Type: " + (form.organization_type.value || "—"),
-        "Area of Interest: " + (form.area_of_interest.value || "—"),
-        "",
-        message,
-      ];
-
-      var subject = "Advisory Inquiry from " + name;
-      var body = lines.join("\n");
-      var mailto =
-        "mailto:cdidio@carlodidio.net?subject=" +
-        encodeURIComponent(subject) +
-        "&body=" +
-        encodeURIComponent(body);
-
-      status.classList.remove("is-error");
-      status.textContent = "Thank you, " + name.split(" ")[0] + ". Opening your email application to send this message to Carlo.";
-      window.location.href = mailto;
-    });
-  }
 })();

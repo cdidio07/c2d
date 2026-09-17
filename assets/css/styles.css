@@ -887,33 +887,6 @@ html.splash-lock,html.splash-lock body{overflow:hidden;height:100%;}
 }
 
 /* =========================================================
-   Contact
-   ========================================================= */
-.contact-grid{display:grid;gap:3rem;grid-template-columns:1fr;margin-top:2.5rem;}
-@media (min-width:900px){.contact-grid{grid-template-columns:1.4fr 1fr;}}
-.form-row{margin-bottom:1.25rem;display:flex;flex-direction:column;gap:.4rem;}
-.form-row--half{display:grid;gap:1rem;grid-template-columns:1fr;}
-@media (min-width:520px){.form-row--half{grid-template-columns:1fr 1fr;}}
-.form-row--half > div{display:flex;flex-direction:column;gap:.4rem;}
-label{font-size:.85rem;font-weight:600;color:var(--navy);}
-input,select,textarea{
-  padding:.75rem .9rem;border:1px solid #C9C3B6;background:var(--white);border-radius:2px;font-size:.97rem;color:var(--charcoal);
-}
-input:focus,select:focus,textarea:focus{border-color:var(--blue);}
-.form-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
-.form-status{min-height:1.4em;font-weight:600;color:var(--navy);margin-top:.75rem;}
-.form-status.is-error{color:#9B2C2C;}
-.form-privacy{font-size:.82rem;color:#5b5f63;margin-top:1rem;}
-.form-privacy a{color:var(--blue);text-decoration:underline;}
-
-.contact-aside{background:var(--stone);padding:2rem;border-top:3px solid var(--gold);}
-.contact-aside__founder{font-style:italic;color:var(--navy) !important;margin-bottom:1.25rem !important;}
-.contact-aside h3{font-family:var(--font-serif);font-size:1.1rem;color:var(--navy);margin:1.25rem 0 .4rem;}
-.contact-aside h3:first-child{margin-top:0;}
-.contact-aside p{font-size:.95rem;color:var(--charcoal);margin-bottom:.5rem;}
-.contact-aside a{color:var(--blue);font-weight:600;}
-
-/* =========================================================
    Footer
    ========================================================= */
 .site-footer{position:relative;overflow:hidden;background:var(--navy);color:#B9C2CE;padding:var(--space-5) 0 var(--space-3);}
