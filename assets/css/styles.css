@@ -786,9 +786,10 @@ input:focus,select:focus,textarea:focus{border-color:var(--blue);}
    ========================================================= */
 .site-footer{position:relative;overflow:hidden;background:var(--navy);color:#B9C2CE;padding:var(--space-5) 0 var(--space-3);}
 .site-footer__mark-bg{
-  position:absolute;bottom:-14%;left:50%;width:min(760px,80vw);height:auto;opacity:.14;
-  transform:translateX(-50%);z-index:0;pointer-events:none;
+  position:absolute;bottom:0;left:50%;width:min(760px,80vw);height:auto;opacity:.16;
+  transform:translate(-50%,50%);z-index:0;pointer-events:none;
 }
+.site-footer__brand,.site-footer__links{position:relative;z-index:1;}
 .site-footer .container{position:relative;z-index:1;}
 .site-footer__grid{display:flex;flex-direction:column;gap:2.5rem;justify-content:space-between;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.1);}
 @media (min-width:700px){.site-footer__grid{flex-direction:row;}}
