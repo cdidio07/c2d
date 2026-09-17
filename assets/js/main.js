@@ -119,8 +119,8 @@
 
   /* ---------------- Reveal on scroll ---------------- */
   var revealTargets = document.querySelectorAll(
-    ".principle, .engagement-card, .impact-col, .media-item, .process__step, " +
-    ".equation, .pem-feature, .pem-card, .about__media, .about__copy, .contact-aside, .faq-item, .numbers-stat"
+    ".principle, .impact-col, .media-item, .process__step, " +
+    ".equation, .pem-feature, .about__media, .about__copy, .contact-aside, .faq-item, .numbers-stat"
   );
   revealTargets.forEach(function (el) { el.classList.add("reveal"); });
 
@@ -182,6 +182,41 @@
         engScroll.scrollBy({ left: amount * dir, behavior: reduceMotion ? "auto" : "smooth" });
       });
     });
+
+    var engCards = engScroll.querySelectorAll(".engagement-card");
+    if (engCards.length && !reduceMotion) {
+      var engTicking = false;
+      function updateEngScale() {
+        var containerRect = engScroll.getBoundingClientRect();
+        var centerX = containerRect.left + containerRect.width / 2;
+        engCards.forEach(function (card) {
+          var r = card.getBoundingClientRect();
+          var cardCenter = r.left + r.width / 2;
+          var dist = Math.abs(centerX - cardCenter);
+          var maxDist = containerRect.width / 2 + r.width / 2;
+          var ratio = Math.min(dist / maxDist, 1);
+          var scale = 1 - ratio * 0.16;
+          var opacity = 1 - ratio * 0.45;
+          card.style.transform = "scale(" + scale.toFixed(3) + ")";
+          card.style.opacity = opacity.toFixed(3);
+        });
+        engTicking = false;
+      }
+      function onEngScroll() {
+        if (!engTicking) {
+          window.requestAnimationFrame(updateEngScale);
+          engTicking = true;
+        }
+      }
+      var engGrid = engScroll.querySelector(".engagement-grid");
+      if (engGrid) {
+        var startPad = parseFloat(window.getComputedStyle(engGrid).paddingLeft) || 0;
+        engScroll.scrollLeft = startPad;
+      }
+      updateEngScale();
+      engScroll.addEventListener("scroll", onEngScroll, { passive: true });
+      window.addEventListener("resize", onEngScroll);
+    }
   }
 
   /* ---------------- Model — sticky scrollytelling ---------------- */
