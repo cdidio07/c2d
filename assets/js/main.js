@@ -25,7 +25,7 @@
     } else {
       splash.classList.add("is-active");
       html.classList.add("splash-lock");
-      window.setTimeout(dismissSplash, 3400);
+      window.setTimeout(dismissSplash, 3800);
       if (skipBtn) {
         skipBtn.addEventListener("click", dismissSplash);
         skipBtn.focus({ preventScroll: true });
@@ -120,7 +120,7 @@
   /* ---------------- Reveal on scroll ---------------- */
   var revealTargets = document.querySelectorAll(
     ".principle, .engagement-card, .impact-col, .media-item, .process__step, .journey__stage, " +
-    ".equation, .pem, .about__media, .about__copy, .contact-aside, .faq-item, .numbers-stat"
+    ".equation, .pem-feature, .pem-card, .about__media, .about__copy, .contact-aside, .faq-item, .numbers-stat"
   );
   revealTargets.forEach(function (el) { el.classList.add("reveal"); });
 
@@ -186,31 +186,6 @@
     } else {
       statEls.forEach(runCount);
     }
-  }
-
-  /* ---------------- Performing Arts Enterprise Model diagram ---------------- */
-  var pem = document.getElementById("pem");
-  if (pem) {
-    var nodes = pem.querySelectorAll(".pem__row");
-    var panels = pem.querySelectorAll(".pem__panel-item");
-
-    function activate(key) {
-      nodes.forEach(function (n) {
-        var match = n.getAttribute("data-node") === key;
-        n.classList.toggle("is-active", match);
-        n.setAttribute("aria-expanded", match ? "true" : "false");
-      });
-      panels.forEach(function (p) {
-        p.classList.toggle("is-visible", p.getAttribute("data-panel") === key);
-      });
-    }
-
-    nodes.forEach(function (node) {
-      var key = node.getAttribute("data-node");
-      node.addEventListener("click", function () { activate(key); });
-      node.addEventListener("mouseenter", function () { activate(key); });
-      node.addEventListener("focus", function () { activate(key); });
-    });
   }
 
   /* ---------------- Services tabs ---------------- */

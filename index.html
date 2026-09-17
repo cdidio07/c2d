@@ -93,6 +93,12 @@
 
 <!-- ============ INTRO SPLASH ============ -->
 <div class="splash" id="splash" aria-label="C2D Partnerships intro animation">
+  <div class="splash__aurora" aria-hidden="true">
+    <span class="splash__aurora-blob splash__aurora-blob--1"></span>
+    <span class="splash__aurora-blob splash__aurora-blob--2"></span>
+    <span class="splash__aurora-blob splash__aurora-blob--3"></span>
+    <span class="splash__aurora-blob splash__aurora-blob--4"></span>
+  </div>
   <button class="splash__skip" id="splash-skip" type="button">Skip intro</button>
   <div class="splash__stage">
     <svg class="splash__mark" viewBox="0 0 420 200" aria-hidden="true">
@@ -100,10 +106,20 @@
       <rect class="splash__capsule splash__capsule--right" x="150" y="30" width="260" height="140" rx="70" fill="none" stroke="#C2A15A" stroke-width="10"></rect>
       <text class="splash__two" x="210" y="122" text-anchor="middle">2</text>
     </svg>
+    <div class="splash__mark-reflection" aria-hidden="true">
+      <svg viewBox="0 0 420 200">
+        <rect x="10" y="30" width="260" height="140" rx="70" fill="none" stroke="#C2A15A" stroke-width="10"></rect>
+        <rect x="150" y="30" width="260" height="140" rx="70" fill="none" stroke="#C2A15A" stroke-width="10"></rect>
+      </svg>
+    </div>
     <div class="splash__type">
-      <span class="splash__tagline splash__tagline--left">From Connections</span>
       <span class="splash__wordmark">Partnerships</span>
-      <span class="splash__tagline splash__tagline--right">to Direction</span>
+      <span class="splash__divider" aria-hidden="true">
+        <span class="splash__divider-line"></span>
+        <span class="splash__divider-star">&#10022;</span>
+        <span class="splash__divider-line"></span>
+      </span>
+      <span class="splash__tagline">From Connections to Direction</span>
     </div>
   </div>
 </div>
@@ -282,53 +298,30 @@
     <h2 id="model-heading" class="section__headline section__headline--light">A New Operating Model for the Performing Arts</h2>
     <p class="lede lede--light">Sustainable transformation requires five interconnected systems, working together as a single operating model &mdash; not five separate initiatives. We call it <strong>the Performing Arts Enterprise Model.</strong></p>
 
-    <div class="pem" id="pem" data-default="mission">
-      <div class="pem__list" role="list">
-        <button class="pem__row is-active" data-node="mission" aria-expanded="true" aria-controls="pem-panel">
-          <span class="pem__row-index">Core</span>
-          <span class="pem__row-label">Mission &amp; Artistic Value</span>
-          <span class="pem__row-arrow" aria-hidden="true">&rarr;</span>
-        </button>
-        <button class="pem__row" data-node="revenue" aria-expanded="false" aria-controls="pem-panel">
-          <span class="pem__row-index">01</span>
-          <span class="pem__row-label">Revenue Engines</span>
-          <span class="pem__row-arrow" aria-hidden="true">&rarr;</span>
-        </button>
-        <button class="pem__row" data-node="relationship" aria-expanded="false" aria-controls="pem-panel">
-          <span class="pem__row-index">02</span>
-          <span class="pem__row-label">Relationship Lifecycle</span>
-          <span class="pem__row-arrow" aria-hidden="true">&rarr;</span>
-        </button>
-        <button class="pem__row" data-node="operating" aria-expanded="false" aria-controls="pem-panel">
-          <span class="pem__row-index">03</span>
-          <span class="pem__row-label">Operating Capabilities</span>
-          <span class="pem__row-arrow" aria-hidden="true">&rarr;</span>
-        </button>
-        <button class="pem__row" data-node="execution" aria-expanded="false" aria-controls="pem-panel">
-          <span class="pem__row-index">04</span>
-          <span class="pem__row-label">Execution Discipline</span>
-          <span class="pem__row-arrow" aria-hidden="true">&rarr;</span>
-        </button>
+    <div class="pem" id="pem">
+      <div class="pem-feature">
+        <span class="pem-feature__index">Core</span>
+        <h3>Mission &amp; Artistic Value</h3>
+        <p>Protect and strengthen the artistic purpose, identity, and contribution that justify the institution&rsquo;s existence. Every other system in the model is built to serve this one.</p>
       </div>
-
-      <div class="pem__panel" id="pem-panel" role="region" aria-live="polite">
-        <div class="pem__panel-item is-visible" data-panel="mission">
-          <h3>Mission &amp; Artistic Value</h3>
-          <p>Protect and strengthen the artistic purpose, identity, and contribution that justify the institution&rsquo;s existence.</p>
-        </div>
-        <div class="pem__panel-item" data-panel="revenue">
+      <div class="pem-grid">
+        <div class="pem-card">
+          <span class="pem-card__index">01</span>
           <h3>Revenue Engines</h3>
           <p>Build a balanced portfolio of earned, contributed, partnership, education, program-generated, and asset-based revenue.</p>
         </div>
-        <div class="pem__panel-item" data-panel="relationship">
+        <div class="pem-card">
+          <span class="pem-card__index">02</span>
           <h3>Relationship Lifecycle</h3>
           <p>Turn individual interactions into enduring relationships across audiences, families, students, communities, donors, partners, and ambassadors.</p>
         </div>
-        <div class="pem__panel-item" data-panel="operating">
+        <div class="pem-card">
+          <span class="pem-card__index">03</span>
           <h3>Operating Capabilities</h3>
           <p>Align people, structure, processes, technology, data, and decision-making with institutional priorities.</p>
         </div>
-        <div class="pem__panel-item" data-panel="execution">
+        <div class="pem-card">
+          <span class="pem-card__index">04</span>
           <h3>Execution Discipline</h3>
           <p>Translate strategy into accountable initiatives with owners, deadlines, financial implications, measurable outcomes, and effective governance.</p>
         </div>
