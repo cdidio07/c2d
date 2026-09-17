@@ -172,7 +172,7 @@
   }
 
   /* ---------------- By the Numbers — count-up ---------------- */
-  var statEls = document.querySelectorAll(".numbers-stat__value");
+  var statEls = document.querySelectorAll(".numbers-stat__value, .hero__chip-value");
   function runCount(el) {
     var target = parseFloat(el.getAttribute("data-count-to"), 10);
     var prefix = el.getAttribute("data-prefix") || "";
