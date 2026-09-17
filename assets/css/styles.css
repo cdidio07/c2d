@@ -148,19 +148,19 @@ html.splash-lock,html.splash-lock body{overflow:hidden;height:100%;}
 .splash.is-leaving{opacity:0;pointer-events:none;}
 .splash[hidden]{display:none;}
 
-.splash__aurora{position:absolute;inset:0;z-index:0;overflow:hidden;filter:saturate(1.3) brightness(1.05);}
+.splash__aurora{position:absolute;inset:0;z-index:0;overflow:hidden;}
 .splash__aurora::after{
-  content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,transparent 0%,rgba(8,28,51,.12) 40%,rgba(8,28,51,.55) 75%,rgba(8,28,51,.9) 100%);
+  content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,transparent 0%,rgba(8,28,51,.3) 45%,rgba(8,28,51,.75) 78%,rgba(8,28,51,.95) 100%);
 }
 .splash__aurora-blob{
-  position:absolute;width:68vmax;height:68vmax;border-radius:50%;filter:blur(42px);opacity:.9;
-  mix-blend-mode:screen;animation:auroraDrift 9s ease-in-out infinite;
+  position:absolute;width:62vmax;height:62vmax;border-radius:50%;filter:blur(72px);opacity:.55;
+  mix-blend-mode:soft-light;animation:auroraDrift 15s ease-in-out infinite;
 }
-.splash__aurora-blob--1{background:radial-gradient(circle,rgba(194,161,90,1),transparent 60%);top:-16%;left:-16%;animation-duration:10s;}
-.splash__aurora-blob--2{background:radial-gradient(circle,rgba(44,74,140,1),transparent 60%);top:6%;right:-20%;animation-duration:12s;animation-delay:-4s;}
-.splash__aurora-blob--3{background:radial-gradient(circle,rgba(140,107,46,1),transparent 60%);bottom:-24%;left:6%;animation-duration:13s;animation-delay:-9s;}
-.splash__aurora-blob--4{background:radial-gradient(circle,rgba(227,200,138,1),transparent 60%);bottom:-14%;right:2%;animation-duration:11s;animation-delay:-6s;}
-.splash__aurora-blob--5{background:radial-gradient(circle,rgba(176,137,104,1),transparent 60%);top:32%;left:38%;width:54vmax;height:54vmax;animation-duration:12.5s;animation-delay:-2s;}
+.splash__aurora-blob--1{background:radial-gradient(circle,rgba(194,161,90,1),transparent 60%);top:-16%;left:-16%;animation-duration:17s;}
+.splash__aurora-blob--2{background:radial-gradient(circle,rgba(64,95,168,1),transparent 60%);top:6%;right:-20%;animation-duration:19s;animation-delay:-4s;}
+.splash__aurora-blob--3{background:radial-gradient(circle,rgba(140,107,46,1),transparent 60%);bottom:-24%;left:6%;animation-duration:21s;animation-delay:-9s;}
+.splash__aurora-blob--4{background:radial-gradient(circle,rgba(227,200,138,1),transparent 60%);bottom:-14%;right:2%;animation-duration:18s;animation-delay:-6s;}
+.splash__aurora-blob--5{background:radial-gradient(circle,rgba(176,137,104,1),transparent 60%);top:32%;left:38%;width:48vmax;height:48vmax;animation-duration:20s;animation-delay:-2s;}
 @keyframes auroraDrift{
   0%,100%{transform:translate(0,0) scale(1);}
   25%{transform:translate(11%,-14%) scale(1.28);}
