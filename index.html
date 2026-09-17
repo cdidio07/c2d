@@ -141,7 +141,7 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
 
-    <a href="#contact" class="btn btn--gold btn--sm nav__cta">Book a Call</a>
+    <a href="#book-a-call" class="btn btn--gold btn--sm nav__cta">Book a Call</a>
 
     <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -158,7 +158,7 @@
       <li><a href="#media">Media</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="btn btn--gold btn--block">Book a Call</a>
+    <a href="#book-a-call" class="btn btn--gold btn--block">Book a Call</a>
   </div>
 </header>
 
@@ -183,7 +183,7 @@
       <p class="hero__philosophy">Mission-led. Enterprise-minded. Built for lasting impact.</p>
       <div class="hero__actions">
         <a href="#model" class="btn btn--gold">Explore the Enterprise Model</a>
-        <a href="#contact" class="btn btn--ghost-light">Book a Call</a>
+        <a href="#book-a-call" class="btn btn--ghost-light">Book a Call</a>
       </div>
     </div>
     <div class="hero__panel" aria-hidden="true">
@@ -867,8 +867,20 @@
     <h2 id="cta-final-heading">The Future of the Performing Arts Requires More Than Survival.</h2>
     <p>It requires stronger enterprises, deeper relationships, diversified revenue, and the discipline to turn ambition into action.</p>
     <div class="cta-final__actions">
-      <a href="#contact" class="btn btn--gold">Book a Call</a>
+      <a href="#book-a-call" class="btn btn--gold">Book a Call</a>
       <a href="https://www.linkedin.com/in/carlodidio" class="btn btn--ghost-light" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOK A CALL ============ -->
+<section class="section section--ivory" id="book-a-call" aria-labelledby="book-a-call-heading">
+  <div class="container">
+    <p class="eyebrow">Book a Call</p>
+    <h2 id="book-a-call-heading" class="section__headline">Find a Time That Works</h2>
+    <p class="lede">Choose a time directly on Carlo&rsquo;s calendar for a focused conversation about your organization&rsquo;s priorities, challenges, and goals.</p>
+    <div class="cal-embed">
+      <div id="cal-inline"></div>
     </div>
   </div>
 </section>
@@ -982,5 +994,48 @@
 </footer>
 
 <script src="/assets/js/main.js" defer></script>
+
+<!-- Cal.com scheduling embed -->
+<script type="text/javascript">
+  (function (C, A, L) {
+    let p = function (a, ar) { a.q.push(ar); };
+    let d = C.document;
+    C.Cal = C.Cal || function () {
+      let cal = C.Cal;
+      let ar = arguments;
+      if (!cal.loaded) {
+        cal.ns = {};
+        cal.q = cal.q || [];
+        d.head.appendChild(d.createElement("script")).src = A;
+        cal.loaded = true;
+      }
+      if (ar[0] === L) {
+        const api = function () { p(api, arguments); };
+        const namespace = ar[1];
+        api.q = api.q || [];
+        if (typeof namespace === "string") {
+          cal.ns[namespace] = cal.ns[namespace] || api;
+          p(cal.ns[namespace], ar);
+          p(cal, ["initNamespace", namespace]);
+        } else p(cal, ar);
+        return;
+      }
+      p(cal, ar);
+    };
+  })(window, "https://app.cal.com/embed/embed.js", "init");
+
+  Cal("init", { origin: "https://cal.com" });
+  Cal("inline", {
+    elementOrSelector: "#cal-inline",
+    calLink: "c2dpartnership",
+    layout: "month_view"
+  });
+  Cal("ui", {
+    theme: "light",
+    styles: { branding: { brandColor: "#C2A15A" } },
+    hideEventTypeDetails: false,
+    layout: "month_view"
+  });
+</script>
 </body>
 </html>

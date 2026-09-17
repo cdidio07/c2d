@@ -668,6 +668,19 @@ html.splash-lock,html.splash-lock body{overflow:hidden;height:100%;}
 .cta-final__actions{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;}
 
 /* =========================================================
+   Book a Call — Cal.com embed
+   ========================================================= */
+.cal-embed{
+  margin-top:2.5rem;border:1px solid var(--stone);border-radius:4px;overflow:hidden;
+  background:var(--white);min-height:680px;
+}
+.cal-embed #cal-inline{width:100%;height:680px;}
+@media (max-width:640px){
+  .cal-embed{min-height:900px;}
+  .cal-embed #cal-inline{height:900px;}
+}
+
+/* =========================================================
    Contact
    ========================================================= */
 .contact-grid{display:grid;gap:3rem;grid-template-columns:1fr;margin-top:2.5rem;}
