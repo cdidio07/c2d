@@ -3,6 +3,42 @@
 
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* ---------------- Intro splash ---------------- */
+  var splash = document.getElementById("splash");
+  if (splash) {
+    var html = document.documentElement;
+    var skipBtn = document.getElementById("splash-skip");
+    var dismissed = false;
+
+    function dismissSplash() {
+      if (dismissed) return;
+      dismissed = true;
+      splash.classList.add("is-leaving");
+      html.classList.remove("splash-lock");
+      window.setTimeout(function () {
+        splash.hidden = true;
+      }, reduceMotion ? 0 : 650);
+    }
+
+    if (reduceMotion) {
+      dismissSplash();
+    } else {
+      splash.classList.add("is-active");
+      html.classList.add("splash-lock");
+      window.setTimeout(dismissSplash, 3400);
+      if (skipBtn) {
+        skipBtn.addEventListener("click", dismissSplash);
+        skipBtn.focus({ preventScroll: true });
+      }
+      splash.addEventListener("click", function (e) {
+        if (e.target === splash) dismissSplash();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") dismissSplash();
+      });
+    }
+  }
+
   /* ---------------- Mobile nav ---------------- */
   var toggle = document.getElementById("nav-toggle");
   var mobileMenu = document.getElementById("mobile-menu");
@@ -83,8 +119,8 @@
 
   /* ---------------- Reveal on scroll ---------------- */
   var revealTargets = document.querySelectorAll(
-    ".principle, .engagement-card, .impact-col, .media-card, .process__step, .journey__stage, " +
-    ".equation, .pem, .about__media, .about__copy, .contact-aside, .faq-item"
+    ".principle, .engagement-card, .impact-col, .media-item, .process__step, .journey__stage, " +
+    ".equation, .pem, .about__media, .about__copy, .contact-aside, .faq-item, .numbers-stat"
   );
   revealTargets.forEach(function (el) { el.classList.add("reveal"); });
 
@@ -111,12 +147,52 @@
     revealTargets.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
+  /* ---------------- By the Numbers — count-up ---------------- */
+  var statEls = document.querySelectorAll(".numbers-stat__value");
+  function runCount(el) {
+    var target = parseFloat(el.getAttribute("data-count-to"), 10);
+    var prefix = el.getAttribute("data-prefix") || "";
+    var suffix = el.getAttribute("data-suffix") || "";
+    if (reduceMotion || isNaN(target)) {
+      el.textContent = prefix + target + suffix;
+      return;
+    }
+    var duration = 1400;
+    var start = null;
+    function step(ts) {
+      if (start === null) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var value = Math.round(target * eased);
+      el.textContent = prefix + value + suffix;
+      if (progress < 1) window.requestAnimationFrame(step);
+    }
+    window.requestAnimationFrame(step);
+  }
+  if (statEls.length) {
+    if ("IntersectionObserver" in window) {
+      var statObserver = new IntersectionObserver(
+        function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              runCount(entry.target);
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.4 }
+      );
+      statEls.forEach(function (el) { statObserver.observe(el); });
+    } else {
+      statEls.forEach(runCount);
+    }
+  }
+
   /* ---------------- Performing Arts Enterprise Model diagram ---------------- */
   var pem = document.getElementById("pem");
   if (pem) {
-    var nodes = pem.querySelectorAll(".pem__node");
+    var nodes = pem.querySelectorAll(".pem__row");
     var panels = pem.querySelectorAll(".pem__panel-item");
-    var lines = pem.querySelectorAll(".pem__line");
 
     function activate(key) {
       nodes.forEach(function (n) {
@@ -126,10 +202,6 @@
       });
       panels.forEach(function (p) {
         p.classList.toggle("is-visible", p.getAttribute("data-panel") === key);
-      });
-      lines.forEach(function (l) {
-        var lineKey = l.getAttribute("data-line") || "";
-        l.classList.toggle("is-active", lineKey.indexOf(key) !== -1);
       });
     }
 
